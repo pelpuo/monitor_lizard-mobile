@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "884271716496",
+    "project_id": "monitorlizard-5371b",
+    "storage_bucket": "monitorlizard-5371b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884271716496:android:285b87416f64ab245a6015",
+        "android_client_info": {
+          "package_name": "com.pandaco.monitorlizard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884271716496-u7oqd7bsv5ca66r7k4jr1ojcn3db50s5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8_oqa1wochymwoniuPzvqvyCqDZc66zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884271716496-u7oqd7bsv5ca66r7k4jr1ojcn3db50s5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
