@@ -31,44 +31,75 @@ class _SignInState extends State<SignIn> {
             child: Column(
               children: [
                 Expanded(
+                    flex: 6,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          "assets/logo_lg.png",
+                          width: 96,
+                        ),
+                        const Text("Monitor Lizard",
+                            style: TextStyle(
+                              color: AppColors.green,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            )),
+                      ],
+                    )),
+                Expanded(
+                    flex: 8,
                     child: Form(
-                  key: formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text("Sign In",
-                          style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold)),
-                      const SizedBox(
-                        height: 16,
+                      key: formKey,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          // Image.asset(
+                          //   "assets/logo_lg.png",
+                          //   width: 96,
+                          // ),
+                          // const Text("Monitor Lizard",
+                          //     style: TextStyle(
+                          //       color: AppColors.green,
+                          //       fontWeight: FontWeight.bold,
+                          //       fontSize: 18,
+                          //     )),
+                          // const SizedBox(
+                          //   height: 48,
+                          // ),
+                          const Text("Sign In",
+                              style: TextStyle(
+                                  fontSize: 24, fontWeight: FontWeight.bold)),
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          RegistrationTextField(
+                              textController: emailController,
+                              hintText: "Email",
+                              validator: (String value) {
+                                if (value.trim() == "") {
+                                  return 'This field must be filled';
+                                } else {
+                                  return null;
+                                }
+                              },
+                              onPressed: () {}),
+                          const SizedBox(height: 12),
+                          RegistrationTextField(
+                              textController: passwordController,
+                              hintText: "Password",
+                              hideText: true,
+                              validator: (String value) {
+                                if (value.trim() == "") {
+                                  return 'This field must be filled';
+                                } else {
+                                  return null;
+                                }
+                              },
+                              onPressed: () {}),
+                        ],
                       ),
-                      RegistrationTextField(
-                          textController: emailController,
-                          hintText: "Email",
-                          validator: (String value) {
-                            if (value.trim() == "") {
-                              return 'This field must be filled';
-                            } else {
-                              return null;
-                            }
-                          },
-                          onPressed: () {}),
-                      const SizedBox(height: 12),
-                      RegistrationTextField(
-                          textController: passwordController,
-                          hintText: "Password",
-                          hideText: true,
-                          validator: (String value) {
-                            if (value.trim() == "") {
-                              return 'This field must be filled';
-                            } else {
-                              return null;
-                            }
-                          },
-                          onPressed: () {}),
-                    ],
-                  ),
-                )),
+                    )),
                 AppButton(
                   prompt: "Sign In",
                   onPressed: () async {

@@ -171,7 +171,9 @@ class AttendanceProvider extends ChangeNotifier {
           atWork = true;
         } else if (distanceToOffice > distanceThresholdInMetres / 1000 &&
             isWorkingHours) {
-          runningLate = true;
+          if (currentLog == null) {
+            runningLate = true;
+          }
           atWork = false;
           print("User is running late");
         } else {

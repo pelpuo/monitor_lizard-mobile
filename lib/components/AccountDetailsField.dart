@@ -3,33 +3,39 @@ import 'package:monitor_lizard/constants/colors.dart';
 
 class AccountDetailsField extends StatelessWidget {
   final String prompt;
-  final TextEditingController fieldController;
-  final bool obscure;
+  final String value;
   const AccountDetailsField(
-      {Key? key,
-      required this.prompt,
-      required this.fieldController,
-      this.obscure = false})
+      {Key? key, required this.prompt, required this.value})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          prompt,
-          style: const TextStyle(fontSize: 16, color: AppColors.gray),
+        const Divider(),
+        const SizedBox(
+          height: 8,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              prompt,
+              style: const TextStyle(color: AppColors.gray),
+            ),
+            Text(
+              value,
+              style: const TextStyle(
+                  fontSize: 18,
+                  color: AppColors.dark,
+                  fontWeight: FontWeight.w300),
+            ),
+          ],
         ),
         const SizedBox(
-          height: 6,
+          height: 8,
         ),
-        TextFormField(
-            controller: fieldController,
-            obscureText: obscure,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-            ))
       ],
     );
   }
